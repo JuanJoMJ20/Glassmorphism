@@ -21,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   /* Beautiful, dimly lit living room background */
-  background-image: url('sala.jpg');
+  background-image: url('Sala.jpg');
   background-size: cover;
   background-position: center;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
