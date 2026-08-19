@@ -1,8 +1,8 @@
 :root {
-  --glass-bg: rgba(35, 35, 35, 0.4);
-  --glass-bg-hover: rgba(55, 55, 55, 0.5);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-light: rgba(255, 255, 255, 0.25);
+  /* Brighter, clearer glass with more blur */
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-bg-hover: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
   --text-primary: rgba(255, 255, 255, 0.95);
   --text-secondary: rgba(255, 255, 255, 0.6);
   --accent-color: #ffffff;
@@ -20,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Beautiful, dimly lit living room background */
+  /* Make sure you open this page in Fullscreen mode (F11) to get the best effect! */
   background-image: url('Sala.jpg');
   background-size: cover;
   background-position: center;
@@ -31,19 +31,18 @@ body {
 
 .app-container {
   position: relative;
-  /* Adjust perspective to give a slight 3D feel if wanted, but keep it clean for now */
   perspective: 1000px;
 }
 
 /* Base Glass Panel Style */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  backdrop-filter: blur(60px) saturate(180%);
+  -webkit-backdrop-filter: blur(60px) saturate(180%);
   border: 1px solid var(--glass-border);
   box-shadow: 
-    0 24px 48px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 32px 64px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 /* Left Sidebar */
@@ -52,23 +51,22 @@ body {
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
-  margin-right: 32px;
+  margin-right: 48px; /* Further left */
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 24px 10px;
+  padding: 24px 14px; /* Pill shape */
   border-radius: 40px;
 }
 
 /* Main Window */
 .video-window {
   width: 800px;
-  /* Aspect ratio roughly matches a large media player */
   aspect-ratio: 16 / 10;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border-radius: 24px;
+  padding: 24px; /* Larger padding like original */
+  border-radius: 36px; /* Smoother, larger radius */
 }
 
 /* Bottom Bar */
@@ -77,12 +75,12 @@ body {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 32px;
+  margin-top: 48px; /* Further down */
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 14px 32px;
-  border-radius: 40px;
+  gap: 28px; /* Spaced out */
+  padding: 16px 40px;
+  border-radius: 40px; /* Perfect pill */
   white-space: nowrap;
 }
 
@@ -91,14 +89,27 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   padding: 0 8px;
 }
 
 .window-header .title {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.5px;
+}
+
+/* Top buttons (< and Fullscreen) are just icons floating, no circular background */
+.top-btn {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  width: 32px;
+  height: 32px;
+}
+
+.top-btn:hover {
+  background: rgba(255,255,255,0.1) !important; /* very subtle on hover */
 }
 
 /* Video Content Area */
@@ -107,7 +118,7 @@ body {
   flex: 1;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
 .video-frame {
@@ -122,25 +133,25 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 40px 32px 32px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  padding: 40px 32px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: flex-end;
 }
 
 .subtitle {
   text-align: center;
   font-size: 14px;
   font-weight: 500;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  margin-bottom: 8px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.9); /* Subtler but legible shadow */
+  margin-bottom: 16px; /* Space between subtitle and progress bar */
+  margin-top: auto;
 }
 
 /* Progress Bar */
 .progress-bar-container {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   height: 20px;
   display: flex;
   align-items: center;
@@ -149,34 +160,34 @@ body {
 
 .progress-track {
   width: 100%;
-  height: 2px;
+  height: 4px; /* Thicker white line requested */
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 1px;
+  border-radius: 2px;
   position: relative;
 }
 
 .progress-fill {
   height: 100%;
   background: var(--accent-color);
-  border-radius: 1px;
+  border-radius: 2px;
   position: relative;
 }
 
 .progress-thumb {
   position: absolute;
-  right: -4px;
+  right: -7px;
   top: 50%;
   transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
+  width: 14px; /* Larger circle requested */
+  height: 14px;
   background: var(--accent-color);
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   transition: transform 0.2s;
 }
 
 .progress-bar-container:hover .progress-thumb {
-  transform: translateY(-50%) scale(1.4);
+  transform: translateY(-50%) scale(1.3);
 }
 
 /* Buttons */
@@ -190,7 +201,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -199,37 +209,21 @@ body {
   background: var(--glass-bg-hover);
 }
 
-.icon-btn.small {
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.icon-btn.small:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
 .icon-btn.active {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtler active state */
 }
 
 /* specific style for play btn in bottom bar */
 .bottom-bar .play-btn {
-  font-size: 20px;
-}
-
-.spacer {
-  width: 1px;
-  height: 24px;
-  background: var(--glass-border);
-  margin: 0 8px;
+  width: 48px;
+  height: 48px;
 }
 
 .resolution {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 13px; /* Slightly finer text */
+  font-weight: 400; /* Finer font weight */
+  color: var(--text-primary); /* Changed from secondary to match the bright icons */
   margin-left: 8px;
+  opacity: 0.9;
 }

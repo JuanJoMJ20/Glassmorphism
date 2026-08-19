@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vision Pro Glassmorphism</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,24 +15,44 @@
     
     <!-- Left Sidebar -->
     <aside class="sidebar glass-panel">
-      <button class="icon-btn active"><i class="fa-solid fa-play"></i></button>
-      <button class="icon-btn"><i class="fa-solid fa-layer-group"></i></button>
-      <button class="icon-btn"><i class="fa-solid fa-podcast"></i></button>
-      <button class="icon-btn"><i class="fa-solid fa-bag-shopping"></i></button>
-      <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <!-- Play -->
+      <button class="icon-btn active">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </button>
+      <!-- Layers -->
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+      </button>
+      <!-- Signal -->
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
+      </button>
+      <!-- Bag -->
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </button>
+      <!-- Search -->
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
     </aside>
 
     <!-- Main Video Window -->
     <main class="video-window glass-panel">
       <header class="window-header">
-        <button class="icon-btn small"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="icon-btn top-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
         <h2 class="title">Avengers : Endgame</h2>
-        <button class="icon-btn small"><i class="fa-solid fa-expand"></i></button>
+        <button class="icon-btn top-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        </button>
       </header>
       
       <div class="video-content">
         <img src="imgglass.jpg" alt="Video frame" class="video-frame">
         <div class="video-overlay">
+          <!-- Text strictly inside the overlay, above progress bar -->
           <p class="subtitle">Avengers, Assemble !</p>
           <div class="progress-bar-container">
             <div class="progress-track">
@@ -47,14 +66,22 @@
 
     <!-- Bottom Control Bar -->
     <footer class="bottom-bar glass-panel">
-      <button class="icon-btn"><i class="fa-solid fa-backward-step"></i></button>
-      <button class="icon-btn play-btn"><i class="fa-solid fa-play"></i></button>
-      <button class="icon-btn"><i class="fa-solid fa-forward-step"></i></button>
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+      </button>
+      <button class="icon-btn play-btn">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </button>
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+      </button>
       
-      <div class="spacer"></div>
-      
-      <button class="icon-btn"><i class="fa-solid fa-volume-high"></i></button>
-      <button class="icon-btn"><i class="fa-regular fa-closed-captioning"></i></button>
+      <button class="icon-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+      </button>
+      <button class="icon-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect><path d="M10 11H8v2h2m6-2h-2v2h2"></path></svg>
+      </button>
       <span class="resolution">1080p</span>
     </footer>
 
@@ -65,13 +92,11 @@
     const buttons = document.querySelectorAll('.icon-btn');
     buttons.forEach(btn => {
       btn.addEventListener('click', function() {
-        // Efecto de escala
         this.style.transform = 'scale(0.85)';
         setTimeout(() => {
           this.style.transform = 'scale(1)';
         }, 150);
         
-        // Simular que el botón queda activo (si es de la barra lateral)
         if (this.closest('.sidebar')) {
           document.querySelectorAll('.sidebar .icon-btn').forEach(b => b.classList.remove('active'));
           this.classList.add('active');
@@ -80,20 +105,18 @@
     });
 
     // Simular el botón de Play/Pause de la barra inferior y del sidebar
-    const playBtns = document.querySelectorAll('.fa-play, .play-btn');
-    playBtns.forEach(playBtn => {
-      const btn = playBtn.closest('.icon-btn') || playBtn;
+    const playBtns = document.querySelectorAll('.play-btn svg, .sidebar .icon-btn:first-child svg');
+    playBtns.forEach(icon => {
+      const btn = icon.closest('.icon-btn');
       btn.addEventListener('click', function(e) {
-        e.stopPropagation(); // Evitar doble click
-        const icon = this.querySelector('i');
-        if (icon) {
-          if (icon.classList.contains('fa-play')) {
-            icon.classList.remove('fa-play');
-            icon.classList.add('fa-pause');
-          } else if (icon.classList.contains('fa-pause')) {
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-play');
-          }
+        e.stopPropagation(); 
+        const isPlaying = icon.innerHTML.includes('rect');
+        if (isPlaying) {
+          // Cambiar a Play (Triángulo)
+          icon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>';
+        } else {
+          // Cambiar a Pause (Dos líneas)
+          icon.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
         }
         
         this.style.transform = 'scale(0.85)';
