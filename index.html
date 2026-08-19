@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision Pro Glassmorphism</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="sidebar glass-panel">
+      <button class="icon-btn active"><i class="fa-solid fa-play"></i></button>
+      <button class="icon-btn"><i class="fa-solid fa-layer-group"></i></button>
+      <button class="icon-btn"><i class="fa-solid fa-satellite-dish"></i></button>
+      <button class="icon-btn"><i class="fa-solid fa-bag-shopping"></i></button>
+      <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </aside>
+
+    <!-- Main Video Window -->
+    <main class="video-window glass-panel">
+      <header class="window-header">
+        <button class="icon-btn small"><i class="fa-solid fa-chevron-left"></i></button>
+        <h2 class="title">Avengers : Endgame</h2>
+        <button class="icon-btn small"><i class="fa-solid fa-expand"></i></button>
+      </header>
+      
+      <div class="video-content">
+        <img src="imgglass.jpg" alt="Video frame" class="video-frame">
+        <div class="video-overlay">
+          <div class="progress-bar">
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 70%;"></div>
+              <div class="progress-thumb"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Control Bar -->
+    <footer class="bottom-bar glass-panel">
+      <button class="icon-btn"><i class="fa-solid fa-backward-step"></i></button>
+      <button class="icon-btn play-btn"><i class="fa-solid fa-play"></i></button>
+      <button class="icon-btn"><i class="fa-solid fa-forward-step"></i></button>
+      
+      <div class="spacer"></div>
+      
+      <button class="icon-btn"><i class="fa-solid fa-volume-high"></i></button>
+      <button class="icon-btn"><i class="fa-regular fa-closed-captioning"></i></button>
+      <span class="resolution">1080p</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // Añadir animación "Click" a todos los botones
+    const buttons = document.querySelectorAll('.icon-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Efecto de escala
+        this.style.transform = 'scale(0.85)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+        
+        // Simular que el botón queda activo (si es de la barra lateral)
+        if (this.closest('.sidebar')) {
+          document.querySelectorAll('.sidebar .icon-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Simular el botón de Play/Pause de la barra inferior y del sidebar
+    const playBtns = document.querySelectorAll('.fa-play, .play-btn');
+    playBtns.forEach(playBtn => {
+      const btn = playBtn.closest('.icon-btn') || playBtn;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Evitar doble click
+        const icon = this.querySelector('i');
+        if (icon) {
+          if (icon.classList.contains('fa-play')) {
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-pause');
+          } else if (icon.classList.contains('fa-pause')) {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+          }
+        }
+        
+        this.style.transform = 'scale(0.85)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      });
+    });
+  </script>
+</body>
+</html>
